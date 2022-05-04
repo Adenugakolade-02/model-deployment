@@ -1,6 +1,9 @@
 from flask import Blueprint, request, jsonify
 from packages.ml_api.api.config import get_logger
 from regression_model.predict import make_prediction
+
+from regression_model import __version__ as _version
+
 from packages.ml_api import __version__ as api_version
 from packages.ml_api.api.validation import validate_inputs
 
@@ -20,7 +23,8 @@ def health():
 @prediction_app.route('/version',methods = ['GET'])
 def version():
     if request.method == 'GET':
-        return jsonify({"api_version": api_version})
+        return jsonify({"model_version":_version,
+                        "api_version": api_version})
 
 
 @prediction_app.route('/v1/predict/regression', methods = ['POST'])
@@ -36,6 +40,9 @@ def predict():
         # _logger.info(f'Outputs : {result}')
 
         prediction = list(result['prediction'])
+        version = result.get('version')
         # _logger.info(prediction)
-        return jsonify({'prediction':prediction,'errors':errors})
+        return jsonify({'prediction':prediction,
+                        "'version":version,
+                        'errors':errors})
         # return jsonify({'prediction':prediction})

@@ -7,7 +7,7 @@ from packages.regression_model.regression_model.custom_preprocessing_pipelines.m
 from packages.regression_model.regression_model.custom_preprocessing_pipelines import validation
 from packages.regression_model.regression_model.configuration import config
 
-from packages.regression_model import __version__ as _version
+from packages.regression_model.regression_model import __version__ as _version
 
 _logger = logging.getLogger(__name__)
 
@@ -21,7 +21,7 @@ def make_prediction(input_data) -> dict:
     validated_data = validation.validate_dataset(input_data=data)
     prediction = trained_model.predict(validated_data[config.FEATURES])
     output  = np.exp(prediction)
-    response = {'prediction':output}
+    response = {'prediction':output,"version":_version}
 
     _logger.info(
         f"Making prdcictions with model versions: {_version}"
