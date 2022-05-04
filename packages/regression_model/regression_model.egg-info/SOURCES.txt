@@ -1,0 +1,26 @@
+MANIFEST.in
+requirements.txt
+setup.py
+regression_model/VERSION
+regression_model/__init__.py
+regression_model/pipeline.py
+regression_model/predict.py
+regression_model/train_pipeline.py
+regression_model.egg-info/PKG-INFO
+regression_model.egg-info/SOURCES.txt
+regression_model.egg-info/dependency_links.txt
+regression_model.egg-info/requires.txt
+regression_model.egg-info/top_level.txt
+regression_model/Datasets/__init__.py
+regression_model/configuration/__init__.py
+regression_model/configuration/config.py
+regression_model/configuration/logging_config.py
+regression_model/custom_preprocessing_pipelines/__init__.py
+regression_model/custom_preprocessing_pipelines/model_management.py
+regression_model/custom_preprocessing_pipelines/preprocessing.py
+regression_model/custom_preprocessing_pipelines/validation.py
+regression_model/datasets/test.csv
+regression_model/datasets/train.csv
+regression_model/trained_models/lasso regression_output_v0.1.0.pkl
+test/__init__.py
+test/test_prediction.py

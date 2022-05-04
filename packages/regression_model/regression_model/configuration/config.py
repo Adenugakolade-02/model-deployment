@@ -1,7 +1,7 @@
 import pathlib
-import packages.regression_model as regression_model
+import packages.regression_model.regression_model as regression_model
 
-from packages.regression_model.custom_preprocessing_pipelines import preprocessing
+from packages.regression_model.regression_model.custom_preprocessing_pipelines import preprocessing
 
 PACKAGE_ROOT = pathlib.Path(regression_model.__file__).resolve().parent
 DATASET_DIR = PACKAGE_ROOT/'Datasets'

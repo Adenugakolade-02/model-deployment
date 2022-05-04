@@ -3,9 +3,9 @@ import pandas as pd
 import numpy as np
 
 
-from packages.regression_model.custom_preprocessing_pipelines.model_management import load_model
-from packages.regression_model.custom_preprocessing_pipelines import validation
-from packages.regression_model.configuration import config
+from packages.regression_model.regression_model.custom_preprocessing_pipelines.model_management import load_model
+from packages.regression_model.regression_model.custom_preprocessing_pipelines import validation
+from packages.regression_model.regression_model.configuration import config
 
 from packages.regression_model import __version__ as _version
 

@@ -2,7 +2,7 @@ from itertools import compress
 
 import pandas as pd
 import numpy as np
-from packages.regression_model.configuration import config
+from packages.regression_model.regression_model.configuration import config
 
 
 def validate_dataset(input_data: pd.DataFrame) -> pd.DataFrame:

@@ -1,0 +1,6 @@
+Flask==2.0.2
+werkzeug==2.0.3
+marshmallow==3.15.0
+
+# model package built
+-e "C:\Users\kolade\Desktop\Deployment task\packages\regression_model"

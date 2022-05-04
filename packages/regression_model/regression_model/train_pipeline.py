@@ -6,10 +6,10 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 
 
-from packages.regression_model.configuration import config
-from packages.regression_model.custom_preprocessing_pipelines import model_management
-import packages.regression_model.pipeline as pipeline
-from packages.regression_model import __version__ as _version
+from packages.regression_model.regression_model.configuration import config
+from packages.regression_model.regression_model.custom_preprocessing_pipelines import model_management
+import packages.regression_model.regression_model.pipeline as pipeline
+from packages.regression_model.regression_model import __version__ as _version
 
 
 

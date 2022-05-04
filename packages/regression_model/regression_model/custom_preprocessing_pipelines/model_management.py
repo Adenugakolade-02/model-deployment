@@ -3,8 +3,8 @@ import joblib
 import pandas as pd
 from sklearn.pipeline import Pipeline
 
-from packages.regression_model.configuration import config
-from packages.regression_model import __version__ as _version
+from packages.regression_model.regression_model.configuration import config
+from packages.regression_model.regression_model import __version__ as _version
 
 _logger = logging.getLogger(__name__)
 

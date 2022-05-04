@@ -1,8 +1,8 @@
 import logging
 import sys
 
-from packages.regression_model.configuration import config
-from packages.regression_model.configuration import logging_config
+from packages.regression_model.regression_model.configuration import config
+from packages.regression_model.regression_model.configuration import logging_config
 
 formatter = logging.Formatter("%(asctime)s — %(name)s — %(levelname)s —" "%(funcName)s:%(lineno)d — %(message)s")
 console_handler = logging.StreamHandler(sys.stdout)
