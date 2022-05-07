@@ -2,11 +2,18 @@ from itertools import compress
 
 import pandas as pd
 import numpy as np
+import logging
+
 from packages.regression_model.regression_model.configuration import config
+
+_logger = logging.getLogger(__name__)
 
 
 def validate_dataset(input_data: pd.DataFrame) -> pd.DataFrame:
     """Check model inputs for unprocessable values."""
+
+    # print(f"This the lenght of the data that  entered {len(input_data)}")
+    _logger.info(f"This the lenght of the data that  entered {len(input_data)}")
 
     validated_data = input_data.copy()
 
@@ -29,4 +36,6 @@ def validate_dataset(input_data: pd.DataFrame) -> pd.DataFrame:
         ]
         validated_data = validated_data[validated_data[vars_with_neg_values] > 0]
 
+    # print(f"This the lenght of the data leaving {len(validated_data)}")
+    _logger.info(f"This the lenght of the data that  entered {len(validated_data)}")
     return validated_data

@@ -1,9 +1,9 @@
 
 import math
 
-from packages.regression_model.predict import make_prediction
-from packages.regression_model.configuration import config
-from packages.regression_model.custom_preprocessing_pipelines import model_management
+from packages.regression_model.regression_model.predict import make_prediction
+from packages.regression_model.regression_model.configuration import config
+from packages.regression_model.regression_model.custom_preprocessing_pipelines import model_management
 
 def test_prediction() -> None:
     test_data = model_management.load_data(file_name=config.TESTING_DATA)
@@ -11,13 +11,15 @@ def test_prediction() -> None:
     test_json = test_data[0:1].to_json(orient='records')
 
     prediction  = make_prediction(input_data=test_json)
-
+    print(prediction)
     #Test 1
     assert prediction is not None
     #Test 2
     assert isinstance(prediction.get('prediction')[0],float)
     #Test 3
     assert math.ceil(prediction.get('prediction')[0]) == 154155
+    assert prediction.get('version') == '0.1.0'
+
 
 def test_multiple_prediction()->None:
     test_data = model_management.load_data(file_name=config.TESTING_DATA)
@@ -30,3 +32,4 @@ def test_multiple_prediction()->None:
     assert prediction is not None
     assert len(prediction.get('prediction')) == 1451
     assert len(prediction.get('prediction')) != test_data_len
+    assert prediction['version'] == '0.1.0'

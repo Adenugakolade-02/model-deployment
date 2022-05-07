@@ -36,13 +36,13 @@ def predict():
 
         input_data = json.dumps(input_data)
         result = make_prediction(input_data=input_data)
-
-        # _logger.info(f'Outputs : {result}')
+        _logger.info(result)
 
         prediction = list(result['prediction'])
-        version = result.get('version')
-        # _logger.info(prediction)
+        # versions = result['version']
+        
+        # _logger.info(versions)
+        
         return jsonify({'prediction':prediction,
-                        "'version":version,
+                        # "'versions":versions,
                         'errors':errors})
-        # return jsonify({'prediction':prediction})

@@ -21,8 +21,9 @@ def make_prediction(input_data) -> dict:
     validated_data = validation.validate_dataset(input_data=data)
     prediction = trained_model.predict(validated_data[config.FEATURES])
     output  = np.exp(prediction)
-    response = {'prediction':output,"version":_version}
-
+    response = {'prediction':output, "version":_version}
+    _logger.info(response['version'])
+    
     _logger.info(
         f"Making prdcictions with model versions: {_version}"
         f"Inputs: {validated_data}"

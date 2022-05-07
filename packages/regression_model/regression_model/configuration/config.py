@@ -4,6 +4,7 @@ import packages.regression_model.regression_model as regression_model
 from packages.regression_model.regression_model.custom_preprocessing_pipelines import preprocessing
 
 PACKAGE_ROOT = pathlib.Path(regression_model.__file__).resolve().parent
+# print(PACKAGE_ROOT)
 DATASET_DIR = PACKAGE_ROOT/'Datasets'
 TRAINED_MODEL_DIR = PACKAGE_ROOT/'trained_models'
 
